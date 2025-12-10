@@ -22,13 +22,46 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, var(--bavarian-blue) 0%, var(--bavarian-light-blue) 100%);
+    background:
+        /* Bayerisches Rautenmuster */
+        repeating-linear-gradient(
+            45deg,
+            var(--white) 0px,
+            var(--white) 40px,
+            var(--bavarian-blue) 40px,
+            var(--bavarian-blue) 80px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            var(--white) 0px,
+            var(--white) 40px,
+            var(--bavarian-blue) 40px,
+            var(--bavarian-blue) 80px
+        );
+    background-size: 56.57px 56.57px;
+    background-position: 0 0, 28.28px 28.28px;
     color: var(--dark-gray);
     min-height: 100vh;
     padding: 20px;
+    position: relative;
+}
+
+/* Semi-transparenter Overlay für bessere Lesbarkeit */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 102, 179, 0.15);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .container {
+    position: relative;
+    z-index: 1;
     max-width: 900px;
     margin: 0 auto;
 }
