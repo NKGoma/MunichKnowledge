@@ -71,7 +71,10 @@ header {
     text-align: center;
     color: var(--white);
     margin-bottom: 40px;
-    padding: 20px;
+    padding: 30px 20px;
+    background: var(--bavarian-blue);
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
 header h1 {
